@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mesh-900: #0a0e1a;
+  --color-mesh-800: #111827;
+  --color-mesh-700: #1a2332;
+  --color-mesh-600: #243044;
+  --color-mesh-500: #334155;
+  --color-mesh-400: #475569;
+  --color-mesh-300: #64748b;
+  --color-mesh-200: #94a3b8;
+  --color-mesh-100: #cbd5e1;
+
+  --color-neon-green: #00ff88;
+  --color-neon-blue: #00d4ff;
+  --color-neon-purple: #a855f7;
+  --color-neon-red: #ff3366;
+  --color-neon-amber: #fbbf24;
+  --color-neon-cyan: #22d3ee;
+
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.light-mode {
+  --color-mesh-900: #f8fafc;
+  --color-mesh-800: #f1f5f9;
+  --color-mesh-700: #e2e8f0;
+  --color-mesh-600: #cbd5e1;
+  --color-mesh-500: #94a3b8;
+  --color-mesh-400: #64748b;
+  --color-mesh-300: #475569;
+  --color-mesh-200: #334155;
+  --color-mesh-100: #0f172a;
+  
+  /* Slightly tweak neon colors for light mode to maintain contrast */
+  --color-neon-green: #059669;
+  --color-neon-blue: #0284c7;
+  --color-neon-purple: #7e22ce;
+}
+
+/* === BASE === */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-mesh-900);
+    color: var(--color-mesh-100);
+    font-family: var(--font-family-sans);
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-mesh-800);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-mesh-500);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-mesh-400);
+  }
+}
+
+/* === ANIMATIONS === */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px currentColor; }
+  50% { opacity: 0.6; box-shadow: 0 0 20px currentColor; }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes status-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes typing-cursor {
+  0%, 100% { border-right-color: var(--color-neon-green); }
+  50% { border-right-color: transparent; }
+}
+
+/* === UTILITIES === */
+.glass-card {
+  background: color-mix(in srgb, var(--color-mesh-800) 85%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-mesh-500) 25%, transparent);
+  border-radius: 12px;
+  backdrop-filter: blur(16px);
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  border-color: color-mix(in srgb, var(--color-mesh-400) 40%, transparent);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glow-green { box-shadow: 0 0 12px rgba(0, 255, 136, 0.3); }
+.glow-blue { box-shadow: 0 0 12px rgba(0, 212, 255, 0.3); }
+.glow-red { box-shadow: 0 0 12px rgba(255, 51, 102, 0.3); }
+.glow-purple { box-shadow: 0 0 12px rgba(168, 85, 247, 0.3); }
+.glow-amber { box-shadow: 0 0 12px rgba(251, 191, 36, 0.3); }
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.4s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.3s ease-out;
+}
+
+.animate-status-pulse {
+  animation: status-pulse 1.5s ease-in-out infinite;
+}
+
+.animate-gradient-flow {
+  background-size: 200% 200%;
+  animation: gradient-flow 3s ease infinite;
+}
+
+.text-glow-green {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
+}
+
+/* Scan line effect overlay */
+.scan-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-neon-green), transparent);
+  opacity: 0.15;
+  animation: scan-line 8s linear infinite;
+  pointer-events: none;
+}
+
+/* Terminal-style text */
+.terminal-text {
+  font-family: var(--font-family-mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
