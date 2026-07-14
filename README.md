@@ -12,8 +12,8 @@ A background AI daemon that monitors a live Express.js backend, intercepts fatal
 │  (Express.js)    │     │                            │      │  (React + Tailwind)   │
 │                  │     │  ┌─────────┐ ┌─────────┐   │      │                       │
 │  Buggy routes &  │     │  │Sentinel │→│Debugger │   │      │  Real-time agent      │
-│  controllers     │     │  └─────────┘ └────┬────┘   │      │  status, incident     │
-│                  │◀────│  ┌─────────┐ ┌────▼────┐   │────▶│  timeline, code diffs,│
+│  controllers     │     │  └─────────┘ └───-┬────┘   │      │  status, incident     │
+│                  │◀────│ ┌─────────┐ ┌────▼────┐   │────▶ │ timeline, code diffs, │
 │  Crash → Fix →   │     │  │Verifier │←│Deployer │   │      │  WS and live logs     │
 │  Restart cycle   │     │  └─────────┘ └─────────┘   │      │                       │
 └──────────────────┘     │                            │      └───────────────────────┘
