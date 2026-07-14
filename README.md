@@ -87,21 +87,21 @@ npm run dev
 
 ##  Core Features
 
-- ** Sentinel Monitor**            — Real-time log interception using LogTail MCP.
-- ** Multi-Provider Intelligence** — Switch between local **Ollama** models or **Cloud AI** (Hugging Face, OpenAI, Groq) at runtime.
-- ** Dynamic Target Project**      — Resolve incidents in any local directory or **clone a GitHub repository** directly from the dashboard.
-- ** Autonomous Self-Healing**     — 5-phase resolution pipeline: Detection → Diagnosis → Patching → Hot-Reload → Verification.
-- ** Man-in-the-Middle Protocol**  — Optional Human-in-the-Loop (HITL) security layer to mandate user approval before patching code or installing repository dependencies.
-- ** Observer Dashboard**          — High-fidelity real-time visualization of the agentic swarm in action.
+- **Sentinel Monitor**            — Real-time log interception using LogTail MCP.
+- **Multi-Provider Intelligence** — Switch between local **Ollama** models or **Cloud AI** (Hugging Face, OpenAI, Groq) at runtime.
+- **Dynamic Target Project**      — Resolve incidents in any local directory or **clone a GitHub repository** directly from the dashboard.
+- **Autonomous Self-Healing**     — 5-phase resolution pipeline: Detection → Diagnosis → Patching → Hot-Reload → Verification.
+- **Man-in-the-Middle Protocol**  — Optional Human-in-the-Loop (HITL) security layer to mandate user approval before patching code or installing repository dependencies.
+- **Observer Dashboard**          — High-fidelity real-time visualization of the agentic swarm in action.
 
 ##  Observer Dashboard
 
-- ** Live Control**                — WebSocket connection for sub-minute incident response.
-- ** Agent Monitoring**            — Real-time status and telemetry for all 4 agents.
-- ** Incident Lifecycle**          — Feed of active and resolved incidents with detailed diagnostics.
-- ** Code Diff Viewer**            — Visual verification of LLM-generated patches vs. original buggy code.
-- ** Precision Triggering**        — Test the swarm with a library of pre-configured "logical landmine" crashes.
-- ** Advanced Settings**           — Change LLM models, input cloud API keys, or switch target repositories on the fly.
+- **Live Control**                — WebSocket connection for sub-minute incident response.
+- **Agent Monitoring**            — Real-time status and telemetry for all 4 agents.
+- **Incident Lifecycle**          — Feed of active and resolved incidents with detailed diagnostics.
+- **Code Diff Viewer**            — Visual verification of LLM-generated patches vs. original buggy code.
+- **Precision Triggering**        — Test the swarm with a library of pre-configured "logical landmine" crashes.
+- **Advanced Settings**           — Change LLM models, input cloud API keys, or switch target repositories on the fly.
 
 ## 🛠 Tech Stack
 
