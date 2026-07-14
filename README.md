@@ -55,8 +55,6 @@ npm install
 npm run dev
 ```
 
-Open **http://localhost:5173** to see the dashboard.
-
 ## How It Works
 
 ### The 5-Phase Autonomous Healing Loop
