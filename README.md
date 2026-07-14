@@ -1,4 +1,4 @@
-# 🛡️ Aura-Mesh: The Sentinel Protocol
+#  Aura-Mesh: The Sentinel Protocol
 
 > **Autonomous, Zero-Downtime Incident Resolution via Local Agentic Swarms**
 
@@ -8,17 +8,17 @@ A background AI daemon that monitors a live Express.js backend, intercepts fatal
 
 ```
 ┌──────────────────┐     ┌─────────────────────────────┐     ┌───────────────────────┐
-│  🎯 Target API   │────▶│  🧠 Swarm Engine (Python)    │────▶│  📊 Observer Dashboard │
-│  (Express.js)    │     │                             │     │  (React + Tailwind)   │
-│                  │     │  ┌─────────┐ ┌─────────┐   │     │                       │
-│  Buggy routes &  │     │  │Sentinel │→│Debugger │   │     │  Real-time agent      │
-│  controllers     │     │  └─────────┘ └────┬────┘   │     │  status, incident     │
+│   Target API     │────▶│   Swarm Engine (Python)    │────▶│   Observer Dashboard  │
+│  (Express.js)    │     │                            │      │  (React + Tailwind)   │
+│                  │     │  ┌─────────┐ ┌─────────┐   │      │                       │
+│  Buggy routes &  │     │  │Sentinel │→│Debugger │   │      │  Real-time agent      │
+│  controllers     │     │  └─────────┘ └────┬────┘   │      │  status, incident     │
 │                  │◀────│  ┌─────────┐ ┌────▼────┐   │────▶│  timeline, code diffs,│
-│  Crash → Fix →   │     │  │Verifier │←│Deployer │   │ WS  │  and live logs        │
-│  Restart cycle   │     │  └─────────┘ └─────────┘   │     │                       │
-└──────────────────┘     │                             │     └───────────────────────┘
-                         │  LogTail MCP │ FileSystem MCP│
-                         └─────────────────────────────┘
+│  Crash → Fix →   │     │  │Verifier │←│Deployer │   │      │  WS and live logs     │
+│  Restart cycle   │     │  └─────────┘ └─────────┘   │      │                       │
+└──────────────────┘     │                            │      └───────────────────────┘
+                         │LogTail MCP │ FileSystem MCP│
+                         └────────────────────────────┘
 ```
 
 ## Quick Start
@@ -61,13 +61,13 @@ Open **http://localhost:5173** to see the dashboard.
 
 ### The 5-Phase Autonomous Healing Loop
 
-| Phase | Agent | Action |
-|-------|-------|--------|
-| **1. Interception** | 🛡️ Sentinel | Monitors stdout/stderr for 500 errors and stack traces |
-| **2. Diagnosis** | 🧠 Debugger | Reads crash context via FileSystem MCP, queries Ollama |
-| **3. Refactoring** | 🧠 Debugger | Generates patched code using local LLM inference |
-| **4. Deployment** | ⚡ Deployer | Applies patch to file, restarts server |
-| **5. Verification** | ✅ Verifier | Replays crashing request, confirms 200 OK |
+|       Phase         |   Agent   |                       Action                           |
+|---------------------|-----------|--------------------------------------------------------|
+| **1. Interception** |  Sentinel | Monitors stdout/stderr for 500 errors and stack traces |
+| **2. Diagnosis**    |  Debugger | Reads crash context via FileSystem MCP, queries Ollama |
+| **3. Refactoring**  |  Debugger | Generates patched code using local LLM inference       |
+| **4. Deployment**   |  Deployer | Applies patch to file, restarts server                 |
+| **5. Verification** |  Verifier | Replays crashing request, confirms 200 OK              |
 
 ### MCP Servers
 
@@ -87,23 +87,23 @@ Open **http://localhost:5173** to see the dashboard.
 | `.map()` on undefined | `orderController.js` | `POST /api/orders` without items |
 | `.reduce()` no init | `orderController.js` | `GET /api/orders/ORD-XXX/total` |
 
-## 🚀 Core Features
+##  Core Features
 
-- **🛡️ Sentinel Monitor** — Real-time log interception using LogTail MCP.
-- **🧠 Multi-Provider Intelligence** — Switch between local **Ollama** models or **Cloud AI** (Hugging Face, OpenAI, Groq) at runtime.
-- **🛠️ Dynamic Target Project** — Resolve incidents in any local directory or **clone a GitHub repository** directly from the dashboard.
-- **⚡ Autonomous Self-Healing** — 5-phase resolution pipeline: Detection → Diagnosis → Patching → Hot-Reload → Verification.
-- **⏸️ Man-in-the-Middle Protocol** — Optional Human-in-the-Loop (HITL) security layer to mandate user approval before patching code or installing repository dependencies.
-- **📺 Observer Dashboard** — High-fidelity real-time visualization of the agentic swarm in action.
+- ** Sentinel Monitor** — Real-time log interception using LogTail MCP.
+- ** Multi-Provider Intelligence** — Switch between local **Ollama** models or **Cloud AI** (Hugging Face, OpenAI, Groq) at runtime.
+- ** Dynamic Target Project** — Resolve incidents in any local directory or **clone a GitHub repository** directly from the dashboard.
+- ** Autonomous Self-Healing** — 5-phase resolution pipeline: Detection → Diagnosis → Patching → Hot-Reload → Verification.
+- ** Man-in-the-Middle Protocol** — Optional Human-in-the-Loop (HITL) security layer to mandate user approval before patching code or installing repository dependencies.
+- ** Observer Dashboard** — High-fidelity real-time visualization of the agentic swarm in action.
 
-## 🎮 Observer Dashboard
+##  Observer Dashboard
 
-- **🌐 Live Control** — WebSocket connection for sub-minute incident response.
-- **🤖 Agent Monitoring** — Real-time status and telemetry for all 4 agents.
-- **📋 Incident Lifecycle** — Feed of active and resolved incidents with detailed diagnostics.
-- **📝 Code Diff Viewer** — Visual verification of LLM-generated patches vs. original buggy code.
-- **💥 Precision Triggering** — Test the swarm with a library of pre-configured "logical landmine" crashes.
-- **⚙️ Advanced Settings** — Change LLM models, input cloud API keys, or switch target repositories on the fly.
+- ** Live Control** — WebSocket connection for sub-minute incident response.
+- ** Agent Monitoring** — Real-time status and telemetry for all 4 agents.
+- ** Incident Lifecycle** — Feed of active and resolved incidents with detailed diagnostics.
+- ** Code Diff Viewer** — Visual verification of LLM-generated patches vs. original buggy code.
+- ** Precision Triggering** — Test the swarm with a library of pre-configured "logical landmine" crashes.
+- ** Advanced Settings** — Change LLM models, input cloud API keys, or switch target repositories on the fly.
 
 ## 🛠 Tech Stack
 
